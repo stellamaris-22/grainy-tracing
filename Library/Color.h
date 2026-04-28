@@ -5,11 +5,15 @@
 
 class Color : public Vec3 {
 public :
-    float r(){return vector[0];}
-    float g(){return vector[1];}
-    float b(){return vector[2];}
+    Color() : Vec3() {};
+    Color(float r, float g, float b) : Vec3(r, g, b) {};
+    ~Color() = default;
 
-    void convert_color_255(const Color& pixel_color);
+    float r() const {return x();}
+    float g() const {return y();}
+    float b() const {return z();}
+
+    Color convert_color_255(const Color& pixel_color);
 
 };
 
