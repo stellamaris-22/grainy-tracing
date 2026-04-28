@@ -5,9 +5,10 @@
 #include <iostream>
 
 class Vec3 {
-public :
+private :
     float vector[3];
 
+public :
     Vec3() : vector{0.0,0.0,0.0} {}
     Vec3(float v0, float v1, float v2) : vector{v0, v1, v2} {}
     ~Vec3() = default;
