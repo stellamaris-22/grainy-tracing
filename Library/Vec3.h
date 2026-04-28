@@ -17,6 +17,10 @@ public :
     Vec3 operator-() const { return Vec3(-vector[0], -vector[1], -vector[2]); }
     float operator[](int i) const { return vector[i]; }
     float& operator[](int i) { return vector[i]; };
+
+    float x() const {return vector[0];}
+    float y() const {return vector[1];}
+    float z() const {return vector[2];}
     
     Vec3& operator+=(const Vec3 &v);
     Vec3& operator-=(const Vec3 &v);
@@ -30,24 +34,21 @@ public :
     float length();
     float length_sqrd();
 
-    std::ostream& operator<<(std::ostream& out, const Vec3& v);
+    std::ostream& operator<<(std::ostream& out);
 
-    Vec3 operator+(const Vec3& u, const Vec3& v);
-    Vec3 operator-(const Vec3& u, const Vec3& v);
-    Vec3 operator*(const Vec3& u, const Vec3& v);
-    Vec3 operator/(const Vec3& u, const Vec3& v);
+    Vec3 operator+(const Vec3& v);
+    Vec3 operator-(const Vec3& v);
+    Vec3 operator*(const Vec3& v);
+    Vec3 operator/(const Vec3& v);
     
-    Vec3 operator+(float d, const Vec3& v);
-    Vec3 operator+(const Vec3& v, float d);
-    Vec3 operator-(float d, const Vec3& v);
-    Vec3 operator-(const Vec3& v, float d);
-    Vec3 operator*(float d, const Vec3& v);
-    Vec3 operator*(const Vec3& v, float d); 
-    Vec3 operator/(const Vec3& v, float d);
+    Vec3 operator+(float d);
+    Vec3 operator-(float d);
+    Vec3 operator*(float d);
+    Vec3 operator/(float d);
 
-    float prod_escalar(const Vec3& u, const Vec3& v);
-    Vec3& prod_vec(const Vec3& u, const Vec3& v);
-    Vec3& unit_vec(const Vec3& v);
+    float prod_escalar(const Vec3& v);
+    Vec3 prod_vec(const Vec3& v);
+    Vec3 unit_vec();
 
 };
 

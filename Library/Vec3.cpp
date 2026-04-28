@@ -56,92 +56,78 @@ Vec3& Vec3::operator/=(const float d) {
     return *this;
 }
 
-float Vec3::length() { return std::sqrt(lenght_sqrd()); }
+float Vec3::length() { return std::sqrt(length_sqrd()); }
 
 float Vec3::length_sqrd() { 
-    return std::pow(vector[0], 2) + 
-	   std::pow(vector[1], 2) + 
-	   std::pow(vector[2], 2);
+    return std::pow(x(), 2) + 
+	   std::pow(y(), 2) + 
+	   std::pow(z(), 2);
 }
 
-std::ostream& Vec3::operator<<(std::ostream& out, const Vec3& v){
-    return out << '[ ' << v[0] << ' ' << v[1] << ' ' << v[2] << ' ]';
+std::ostream& Vec3::operator<<(std::ostream& out){
+    return out << x() << ' ' << y() << ' ' << z();
 }
 
-Vec3 Vec3::operator+(const Vec3& u, const Vec3& v){
-    return Vec3::Vec3(u[0] + v[0], 
-		      u[1] + v[1], 
-		      u[2] + v[2]);
+Vec3 Vec3::operator+(const Vec3& v){
+    return Vec3(x() + v[0], 
+	        y() + v[1], 
+	        z() + v[2]);
 }
 
-Vec3 Vec3::operator-(const Vec3& u, const Vec3& v){
-    return Vec3::Vec3(u[0] - v[0], 
-		      u[1] - v[1], 
-		      u[2] - v[2]);
+Vec3 Vec3::operator-(const Vec3& v){
+    return Vec3(x() - v[0], 
+		y() - v[1], 
+		z() - v[2]);
 }
 
-Vec3 Vec3::operator*(const Vec3& u, const Vec3& v){
-    return Vec3::Vec3(u[0] * v[0], 
-		      u[1] * v[1], 
-		      u[2] * v[2]);
+Vec3 Vec3::operator*(const Vec3& v){
+    return Vec3(x() * v[0], 
+		y() * v[1], 
+		z() * v[2]);
 }
 
-Vec3 Vec3::operator/(const Vec3& u, const Vec3& v){
-    return Vec3::Vec3(u[0] / v[0], 
-		      u[1] / v[1], 
-		      u[2] / v[2]);
+Vec3 Vec3::operator/(const Vec3& v){
+    return Vec3(x() / v[0], 
+		y() / v[1], 
+		z() / v[2]);
 }
 
-Vec3 Vec3::operator+(float d, const Vec3& v){
-    return Vec3::Vec3(d + v[0], 
-		      d + v[1], 
-		      d + v[2]);
+Vec3 Vec3::operator+(float d){
+    return Vec3(x() + d, 
+	        y() + d, 
+		z() + d);
 }
 
-Vec3 Vec3::operator+(const Vec3& v, float d){
-    return d + v;
+Vec3 Vec3::operator-(float d){
+    return Vec3(x() - d, 
+		y() - d, 
+		z() - d);
 }
 
-Vec3 Vec3::operator-(float d, const Vec3& v){
-    return Vec3::Vec3(d - v[0], 
-		      d - v[1], 
-		      d - v[2]);
+Vec3 Vec3::operator*(float d){
+    return Vec3(x() * d, 
+		y() * d, 
+		z() * d);
 }
 
-Vec3 Vec3::operator-(const Vec3& v, float d){
-    return Vec3::Vec3(v[0] - d, 
-		      v[1] - d, 
-		      v[2] - d);
+Vec3 Vec3::operator/(float d){
+    return Vec3(x() / d, 
+		y() / d, 
+		z() / d);
 }
 
-Vec3 Vec3::operator*(float d, const Vec3& v){
-    return Vec3::Vec3(d * v[0], 
-		      d * v[1], 
-		      d * v[2]);
+float Vec3::prod_escalar(const Vec3& v){
+    return x() * v[0] + 
+	   y() * v[1] + 
+	   z() * v[2];
 }
 
-Vec3 Vec3::operator*(const Vec3& v, float d){
-    return d * v;
+Vec3 Vec3::prod_vec(const Vec3& v){
+    return Vec3(y()*v[2] - z()*v[1], 
+		z()*v[0] - x()*v[2], 
+		x()*v[1] - y()*v[0]);
 }
 
-Vec3 Vec3::operator/(const Vec3& v, float d){
-    return Vec3::Vec3(v[0] / d, 
-		      v[1] / d, 
-		      v[2] / d);
-}
-
-float Vec3::prod_escalar(const Vec3& u, const Vec3& v){
-    return u[0] * v[0] + 
-	   u[1] * v[1] + 
-	   u[2] * v[2];
-}
-
-Vec3& Vec3::prod_vec(const Vec3& u, const Vec3& v){
-    return Vec3::Vec3(u[1]*v[2] - u[2]*v[1], 
-		      u[2]*v[0] - u[0]*v[2], 
-		      u[0]*v[1] - u[1]*v[0]);
-}
-
-Vec3& unit_vec(const Vec3& v){
-    return v / v.length();
+Vec3 Vec3::unit_vec(){
+    return *this / this->length();
 }
