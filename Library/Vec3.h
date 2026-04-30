@@ -40,16 +40,20 @@ public :
     Vec3 operator-(const Vec3& v);
     Vec3 operator*(const Vec3& v);
     Vec3 operator/(const Vec3& v);
-    
-    Vec3 operator+(float d);
-    Vec3 operator-(float d);
-    Vec3 operator*(float d);
-    Vec3 operator/(float d);
 
     float prod_escalar(const Vec3& v);
     Vec3 prod_vec(const Vec3& v);
     Vec3 unit_vec();
 
 };
+    // How deal with rho operations type 
+    // : float -> Vec -> Vec
+    Vec3 operator+(float d, const Vec3& v);
+    Vec3 operator+(const Vec3& v, float d);
+    Vec3 operator-(float d, const Vec3& v);
+    Vec3 operator-(const Vec3& v, float d);
+    Vec3 operator*(float d, const Vec3& v);
+    Vec3 operator*(const Vec3& v, float d);
+    Vec3 operator/(const Vec3& v, float d);
 
 #endif
