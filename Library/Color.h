@@ -13,7 +13,7 @@ public :
     float g() const {return y();}
     float b() const {return z();}
 
-    Color convert_color_255(const Color& pixel_color);
+    Color convert_color_255();
 
 };
 
