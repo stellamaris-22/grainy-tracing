@@ -6,12 +6,12 @@
 class Color : public Vec3 {
 public :
     Color() : Vec3() {};
-    Color(float r, float g, float b) : Vec3(r, g, b) {};
+    Color(double r, double g, double b) : Vec3(r, g, b) {};
     ~Color() = default;
 
-    float r() const {return x();}
-    float g() const {return y();}
-    float b() const {return z();}
+    double r() const {return x();}
+    double g() const {return y();}
+    double b() const {return z();}
 
     Color convert_color_255();
 
