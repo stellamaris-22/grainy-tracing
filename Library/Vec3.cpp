@@ -28,37 +28,37 @@ Vec3& Vec3::operator/=(const Vec3 &v) {
     return *this;
 }
 
-Vec3& Vec3::operator+=(const float d) {
+Vec3& Vec3::operator+=(const double d) {
     vector[0] += d;
     vector[1] += d;
     vector[2] += d;
     return *this;
 }
 
-Vec3& Vec3::operator-=(const float d) {
+Vec3& Vec3::operator-=(const double d) {
     vector[0] -= d;
     vector[1] -= d;
     vector[2] -= d;
     return *this;
 }
 
-Vec3& Vec3::operator*=(const float d) {
+Vec3& Vec3::operator*=(const double d) {
     vector[0] *= d;
     vector[1] *= d;
     vector[2] *= d;
     return *this;
 }
 
-Vec3& Vec3::operator/=(const float d) {
+Vec3& Vec3::operator/=(const double d) {
     vector[0] /= d;
     vector[1] /= d;
     vector[2] /= d;
     return *this;
 }
 
-float Vec3::length() { return std::sqrt(length_sqrd()); }
+double Vec3::length() { return std::sqrt(length_sqrd()); }
 
-float Vec3::length_sqrd() { 
+double Vec3::length_sqrd() { 
     return std::pow(x(), 2) + 
 	   std::pow(y(), 2) + 
 	   std::pow(z(), 2);
@@ -92,7 +92,7 @@ Vec3 Vec3::operator/(const Vec3& v){
 		z() / v[2]);
 }
 
-float Vec3::prod_escalar(const Vec3& v){
+double Vec3::prod_escalar(const Vec3& v){
     return x() * v[0] + 
 	   y() * v[1] + 
 	   z() * v[2];
@@ -108,42 +108,42 @@ Vec3 Vec3::unit_vec(){
     return *this / this->length();
 }
 
-Vec3 operator+(float d, const Vec3& v){
+Vec3 operator+(double d, const Vec3& v){
     return Vec3(d + v.x(), 
 	        d + v.y(), 
 		d + v.z());
 }
 
-Vec3 operator+(const Vec3& v, float d){
+Vec3 operator+(const Vec3& v, double d){
     return Vec3(v.x() + d, 
 	        v.y() + d, 
 		v.z() + d);
 }
 
-Vec3 operator-(const Vec3& v, float d){
+Vec3 operator-(const Vec3& v, double d){
     return Vec3(v.x() - d, 
 		v.y() - d, 
 		v.z() - d);
 }
 
-Vec3 operator-(float d, const Vec3& v){
+Vec3 operator-(double d, const Vec3& v){
     return Vec3(d - v.x(), 
 	        d - v.y(), 
 		d - v.z());
 }
 
-Vec3 operator*(float d, const Vec3& v){
+Vec3 operator*(double d, const Vec3& v){
     return Vec3(d * v.x(), 
 	        d * v.y(), 
 		d * v.z());
 }
-Vec3 operator*(const Vec3& v, float d){
+Vec3 operator*(const Vec3& v, double d){
     return Vec3(v.x() * d, 
 		v.y() * d, 
 		v.z() * d);
 }
 
-Vec3 operator/(const Vec3& v, float d){
+Vec3 operator/(const Vec3& v, double d){
     return Vec3(v.x() / d, 
 		v.y() / d, 
 		v.z() / d);
