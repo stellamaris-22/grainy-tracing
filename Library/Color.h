@@ -9,9 +9,9 @@ public :
     Color(double r, double g, double b) : Vec3(r, g, b) {};
     ~Color() = default;
 
-    double r() const {return x();}
-    double g() const {return y();}
-    double b() const {return z();}
+    double r() const {return k();}
+    double g() const {return l();}
+    double b() const {return m();}
 
     Color convert_color_255();
 

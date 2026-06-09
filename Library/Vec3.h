@@ -18,9 +18,9 @@ public :
     double operator[](int i) const { return vector[i]; }
     double& operator[](int i) { return vector[i]; };
 
-    double x() const {return vector[0];}
-    double y() const {return vector[1];}
-    double z() const {return vector[2];}
+    double k() const {return vector[0];}
+    double l() const {return vector[1];}
+    double m() const {return vector[2];}
     
     Vec3& operator+=(const Vec3 &v);
     Vec3& operator-=(const Vec3 &v);
