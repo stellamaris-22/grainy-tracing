@@ -12,6 +12,7 @@ private:
 public:
     Ray() {}
     Ray(const Point3& o, const Vec3& d) : ori(o), dir(d) {}
+    ~Ray() = default;
     
     const Point3& origin() const { return ori; }
     const Vec3& direction() const { return dir; }
