@@ -1,11 +1,10 @@
 # grainy-tracing
 To compile: 
 
-`g++ Bkgd/part1.cpp -o e` for GC "Hello world!"
-`g++ Bkgd/part2.cpp -o e` for dot coloring by bilinear interpolation
+`g++ main.cpp Bkgd/Background/Background.cpp Bkgd/Camera/Camera.cpp Bkgd/Film/Film.cpp Bkgd/API/API.cpp -o rt3` 
 
 To run:
 
-`./e`
+`./rt3 [<options>] <input_file_name>`
 
-Arguments for part2 are dot coordinates, ranging from 0-399 and 0-199 respectively
+Only available option currently is `--help`. Our current input filename is `in.xml`. Onlyworks for `.xml` files at the moment.
