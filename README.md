@@ -1,7 +1,7 @@
 # grainy-tracing
 To compile: 
 
-`g++ main.cpp Bkgd/Background/Background.cpp Bkgd/Camera/Camera.cpp Bkgd/Film/Film.cpp Bkgd/API/API.cpp -o rt3` 
+`g++ Bkgd/main.cpp Bkgd/Background/Background.cpp Bkgd/Camera/Camera.cpp Bkgd/Film/Film.cpp Bkgd/API/API.cpp -o rt3` 
 
 To run:
 
